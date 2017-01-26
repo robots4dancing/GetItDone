@@ -13,6 +13,7 @@
 		815865E31E39711D00D356BC /* GetItDone.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 815865E11E39711D00D356BC /* GetItDone.xcdatamodeld */; };
 		815865E51E39711D00D356BC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 815865E41E39711D00D356BC /* Assets.xcassets */; };
 		815865E81E39711D00D356BC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 815865E61E39711D00D356BC /* LaunchScreen.storyboard */; };
+		815865F01E3978F900D356BC /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 815865EF1E3978F900D356BC /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		815865E41E39711D00D356BC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		815865E71E39711D00D356BC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		815865E91E39711D00D356BC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		815865EF1E3978F900D356BC /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +60,7 @@
 			children = (
 				815865DA1E39711D00D356BC /* AppDelegate.swift */,
 				815865DC1E39711D00D356BC /* ViewController.swift */,
+				815865EF1E3978F900D356BC /* DetailViewController.swift */,
 				815865DE1E39711D00D356BC /* Main.storyboard */,
 				815865E41E39711D00D356BC /* Assets.xcassets */,
 				815865E61E39711D00D356BC /* LaunchScreen.storyboard */,
@@ -142,6 +145,7 @@
 				815865DD1E39711D00D356BC /* ViewController.swift in Sources */,
 				815865E31E39711D00D356BC /* GetItDone.xcdatamodeld in Sources */,
 				815865DB1E39711D00D356BC /* AppDelegate.swift in Sources */,
+				815865F01E3978F900D356BC /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
