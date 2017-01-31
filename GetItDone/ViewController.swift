@@ -17,7 +17,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     var managedContext  :NSManagedObjectContext!
     
-    @IBOutlet var tasksTableView  : UITableView!
+    @IBOutlet var tasksTableView    :UITableView!
     
     //MARK: - Interavtivity Methods
     
@@ -31,6 +31,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         }
     }
     
+    func updateScreen() {
+        tasksTableView.reloadData()
+    }
+    
     //MARK: - TableView Methods
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -38,7 +42,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "TaskCell", for: indexPath) as! TasksTableViewCell
         let currentTask = taskArray[indexPath.row]
         let taskComplete : String!
         if currentTask.taskCompleted {
@@ -46,8 +50,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         } else {
             taskComplete = "Not completed"
         }
-        cell.textLabel!.text = currentTask.taskName! + ", " + taskComplete
-        cell.detailTextLabel!.text = currentTask.priorityZone
+        cell.setCellTask(task: currentTask)
+        cell.taskLabel.text = currentTask.taskName
+        cell.priorityLabel.text = currentTask.priorityZone
+        cell.statusLabel.text = taskComplete
+        cell.completedCellSwitch.isOn = currentTask.taskCompleted
         return cell
     }
     
@@ -64,6 +71,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             tasksTableView.deleteRows(at: [indexPath], with: .automatic)
             tableView.isEditing = false
         }
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 80.0
     }
     
     //MARK: - Life Cycle Methods

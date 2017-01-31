@@ -31,6 +31,14 @@ class DetailViewController: UIViewController {
         priorityZoneSegControl.selectedSegmentIndex = getPriorityZoneIndex(task: task)
     }
     
+    func checkForChanges(task: Task) -> Bool {
+        if task.taskName! == taskNameTextField.text && taskCompletedSwitch.isOn == task.taskCompleted && priorityZoneSegControl.selectedSegmentIndex == Int(task.priorityZone!){
+            return false
+        } else {
+            return true
+        }
+    }
+    
     func setTaskValues(task: Task) {
         task.taskName = taskNameTextField.text
         task.taskCompleted = taskCompletedSwitch.isOn
@@ -49,8 +57,10 @@ class DetailViewController: UIViewController {
     }
     
     func editTask(task: Task) {
-        setTaskValues(task: task)
-        appDelegate.saveContext()
+        if checkForChanges(task: task) {
+            setTaskValues(task: task)
+            appDelegate.saveContext()
+        }
     }
     
     //MARK: - Interactivity Methods
